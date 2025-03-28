@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('./head') %>
+    <style>
+ section,
+    footer {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      z-index:10px;
+    }
+    .accueil {
+        color:white;
+    }
+    .webgl_1 {
+        position:fixed;
+        border:1px red solid;
+        width:100%;
+        z-index:0;
+        height: 1300px;
+    }
+    </style>
+   
+</head>
+
+<body>
+    <canvas class="webgl_1"></canvas>
+    <section>
+        
+        <div class="accueil">
+          <h1>Accueil</h1>
+        </div>
+      </section>
+
+        <section id="foot">
+            <%- include('./footer') %>
+        </section>
+
+        <script type="module" src="./js/mainIndex.js"></script>
+
+
+
+</body>
+
+</html>
