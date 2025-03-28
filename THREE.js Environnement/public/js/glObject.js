@@ -19,7 +19,7 @@ function getObjectFBX() {
 
     FBXobject.children[0].receiveShadow = true;
 
-    return { FBXobject }
+    return { mesh }
 
 }
 
