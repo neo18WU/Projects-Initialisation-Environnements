@@ -4,7 +4,7 @@ import vertexMain from '../shaders/vertex_main.glsl.js';
 import fragmentPars from '../shaders/fragment_pars.glsl.js';
 import fragmentMain from '../shaders/fragment_main.glsl.js';
 
-function getElemental() {
+function getGLSLObject() {
     const geometry = new THREE.IcosahedronGeometry(1, 200);
     const material = new THREE.MeshStandardMaterial({
 
