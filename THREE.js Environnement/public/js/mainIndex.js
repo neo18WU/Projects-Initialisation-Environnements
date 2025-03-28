@@ -9,7 +9,7 @@ import Stats from 'three/addons/libs/stats.module.js';
 
 import { glWorld } from "./glWorld.js";
 import { getCube, getObjectFBX } from "./glObject.js";
-import { getElemental } from "./glslObject.js";
+//import { getGLSLObject } from "./glslObject.js";
 
 
 import vertexShader from '../shaders/vertex.glsl.js';
@@ -49,13 +49,14 @@ window.addEventListener('resize', handleWindowResize, false);
 //********************************************************************************************************* */
 const group = new THREE.Group();
 
-const meshElemental = getElemental();
-group.add(meshElemental.mesh);
+const glslObject = getGLSLObject();
+group.add(glslObject.mesh);
 
+const fbxObject = getObjectFBX();
+group.add(fbxObject.mesh);
 
-const meshCapsule = getObjectFBX()
-group.add(meshCapsule.FBXobject);
-
+const meshObject = getCube();
+group.add(meshObject.cube);
 world.scene.add(group);
 
 
@@ -144,8 +145,8 @@ function animate() {
   const elapsedTime = clock.getElapsedTime();
 
   // Update objects
-  meshCapsule.FBXobject.rotation.x = elapsedTime / -8;
-  meshCapsule.FBXobject.rotation.y = elapsedTime / 8;
+  meshObject.FBXobject.rotation.x = elapsedTime / -8;
+  meshObject.FBXobject.rotation.y = elapsedTime / 8;
 
   world.renderer.render(world.scene, world.camera); /* without RAPIER */
   //world.rapierWorld.step();
@@ -155,6 +156,5 @@ function animate() {
   //world.controls.update();
   window.requestAnimationFrame(animate);
 }
-console.log(meshCapsule.FBXobject)
 
 animate();
