@@ -4,7 +4,7 @@ import { FBXLoader } from '../three/examples/jsm/loaders/FBXLoader.js';
 function loadObjectFBX() {
     const loader = new FBXLoader();
 
-    return loader.loadAsync('./models/capsuleSmooth.fbx', function (object) {
+    return loader.loadAsync('./models/cube.fbx', function (object) {
 
         return object;
     });
